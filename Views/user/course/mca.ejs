@@ -1,0 +1,48 @@
+<%- include('../../header.ejs') %>
+  <marquee> <h1 >MCA Registration Form</h1> </marquee>
+  <h1 class="text-center bg-success"> DO REGISTER</h1>
+  
+  <div class="container">
+    <div class="row">
+        <hr>
+        <div class="col-md-6">
+           <img src="../../../image/mca.jpg " class="w-100">
+        </div>
+         <div class="col-md-6">
+          <form method="post" action="/mcaform">
+            <label><b>Full Name</b></label>
+            <input type="text" placeholder="Fullname" name="fname" class="form-control mb-3">
+            <label><b> Email</b></label>
+            <input type="text" placeholder="Email"  name="email" class="form-control mb-3">
+            <label><b>Mobile No.</b></label>
+            <input type="number" placeholder="Mobile" name="mobile"  class="form-control mb-3">
+            <label><b>Date of Birth</b></label>
+            <input type="date" name="dob" class="form-control mb-3">
+            <label><b>Gender</b></label><br>
+            <input type="radio" value="male" name="gender">Male
+            <input type="radio" value="female" name="gender" >Female<br><br>
+            <label><b>Address</b></label><br>
+            <textarea  name="address" class="form-control mb-3"></textarea>
+            <label><b>Course</b></label>
+            <select  name="course" class="form-control">
+                <option value="">--Select Course--</option>
+                <option value="MCA">MCA</option>
+             
+            </select><br>
+            <label><b>College</b></label>
+            <select  name="college" class="form-control">
+                <option value="">--Select College--</option>
+                <option value="MITS">MITS</option>
+                <option value="RIMT">RIMT</option>
+                <option value="ITM">ITM</option>
+                <option value="RJIT">RJIT</option>
+            </select><br>
+           
+            <div class="text-center"><button class="btn btn-info mb-3 ">Submit</button>  </div>
+           
+         </form>
+        </div>
+        <hr>
+    </div>
+  </div>
+<%- include('../../footer.ejs') %>

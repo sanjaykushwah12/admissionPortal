@@ -1,0 +1,46 @@
+<%- include('../../header.ejs') %>
+<h3 class="text-center">
+    Course details
+</h3>
+<div class="container">     
+  <div class="col-md-9">
+    <div class="dash-right">
+        
+        <table class="table table-bordered table-striped">
+          
+            <tr>
+                <th>S.N.</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Course</th>
+                <th>Branch</th>
+                <th>College</th>
+            </tr>
+
+       <% i=1 %>
+        <% fc.forEach((c)=>{ %> 
+           <tr>
+            <td><%= i++ %></td>
+            <td><%= c.fname %></td>
+            <td><%= c.email %></td>
+            <td><%= c.mobile %></td>
+            <td><%= c.dob %></td>
+            <td><%= c.gender %></td>
+            <td><%= c.course %></td>
+            <td><%= c.branch %></td>
+            <td><%= c.college %></td>
+
+           </tr>
+
+       <% }) %>
+            
+        </table>
+    </div>   
+   </div>
+</div>
+
+<%- include('../../footer.ejs') %>
