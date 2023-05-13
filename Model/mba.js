@@ -41,8 +41,11 @@ const mbaSchema = new mongoose.Schema({
    
 },{timestamps:true})
 
+
+mongoose.models ={};
+
 // create collection
-const Usermba= mongoose.model('mba', mbaSchema)
+const Usermba=mongoose.model.mba || mongoose.model('mba', mbaSchema)
 //                                   ^collection name
 
 module.exports=Usermba

@@ -2,17 +2,18 @@ const express =require('express')
 
 const app = express()
 const port = 4000
-const connectDB = require('./DB/ConnectDB')
+const connectDB = require('./db/ConnectDB')
 const fileUpload = require("express-fileupload");
 const cloudinary = require('cloudinary');
 const bodyParser=require('body-parser')
 const session = require('express-session')
+const MemoryStore=require('memorystore')(session)
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser')
 const user_auth = require('./middleware/auth')
 
-const CourseController = require('./Controller/User/CourseController')
-const FrontController = require('./Controller/FrontController')
+const CourseController = require('./controller/User/CourseController')
+const FrontController = require('./controller/FrontController')
 
 // set ejs engine 
 app.set('view engine','ejs')
@@ -31,12 +32,26 @@ app.use(express.urlencoded({extended:false}))
 // get token 
 app.use(cookieParser())
 
-app.use(session({
-  secret: 'secret',
-  cookie: { maxAge: 60000 },
-  resave: false,
-  saveUninitialized: false,
+// app.use(session({
+//   secret: 'secret',
+//   cookie: { maxAge: 60000 },
+//   resave: false,
+//   saveUninitialized: false,
   
+// }));
+
+
+app.use(session({
+  // secret: 'secret',
+  // cookie: { maxAge: 60000 },
+  // resave: false,
+   saveUninitialized: false,
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  resave: false,
+  secret: 'keyboard cat'
 }));
 app.use(flash());
 

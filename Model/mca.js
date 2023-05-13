@@ -37,8 +37,10 @@ const mcaSchema = new mongoose.Schema({
    
 },{timestamps:true})
 
+mongoose.models ={};
+
 // create collection
-const Usermca= mongoose.model('mca', mcaSchema)
-//                                   ^collection name
+const Usermca= mongoose.model.mca ||  mongoose.model('mca', mcaSchema)
+//                                                     ^collection name
 
 module.exports=Usermca

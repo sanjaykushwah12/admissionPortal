@@ -1,10 +1,10 @@
-const UserModel = require('../Model/userdata')
-const Userdata = require('../Model/btech')
+const UserModel = require('../model/userdata')
+const Userdata = require('../model/btech')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const cloudinary = require('cloudinary').v2;
-const Usermca = require('../Model/mca')
-const Usermba = require('../Model/mba')
+const Usermca = require('../model/mca')
+const Usermba = require('../model/mba')
 
 
 

@@ -1,6 +1,6 @@
-const Userdata = require('../../Model/btech')
-const Usermba =require('../../Model/mba')
-const Usermca = require('../../Model/mca')
+const Userdata = require('../../model/btech')
+const Usermba =require('../../model/mba')
+const Usermca = require('../../model/mca')
 
 class CourseController{
    

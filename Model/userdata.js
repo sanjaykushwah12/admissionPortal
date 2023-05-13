@@ -24,8 +24,10 @@ const userSchema = new mongoose.Schema({
    
 },{timestamps:true})
 
+mongoose.models ={};
+
 // create collection
-const UserModel= mongoose.model('userreg', userSchema)
-//                                   ^collection name
+const UserModel=mongoose.model.userreg || mongoose.model('userreg', userSchema)
+//                                                          ^collection name
 
 module.exports=UserModel

@@ -41,8 +41,10 @@ const btechSchema = new mongoose.Schema({
    
 },{timestamps:true})
 
+mongoose.models ={};
+
 // create collection
-const Userdata= mongoose.model('btech', btechSchema)
-//                                   ^collection name
+const Userdata= mongoose.model.btech || mongoose.model('btech', btechSchema)
+//                                                       ^collection name
 
 module.exports=Userdata
